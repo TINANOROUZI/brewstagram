@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; padding: 20px; }
+.app { max-width: 800px; margin: 0 auto; }
+.posts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.post { border: 1px solid #ddd; padding: 8px; }
+.post img { width: 100%; height: auto; display:block }
+.author { font-weight: bold; margin-bottom: 8px }
