@@ -22,8 +22,8 @@ app.post('/api/auth/login', (req, res) => {
 
 // Posts API (node-side sample). If Java backend is running, you can proxy instead.
 const samplePosts = [
-  { id: 1, author: 'alice', imageUrl: '/pictures/sample1.jpg', caption: 'Great brew!' },
-  { id: 2, author: 'bob', imageUrl: '/pictures/sample2.jpg', caption: 'Tasty.' }
+  { id: 1, author: 'alice', imageUrl: '/pictures/cappuccino1.png', caption: 'Great brew!' },
+  { id: 2, author: 'bob', imageUrl: '/pictures/cappuccino2.png', caption: 'Tasty.' }
 ];
 
 app.get('/api/posts', (req, res) => {

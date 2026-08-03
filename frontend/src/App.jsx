@@ -9,7 +9,7 @@ export default function App(){
 
   useEffect(()=>{
     axios.get(`${apiBaseUrl}/api/posts`)
-      .then(r => setPosts(r.data))
+      .then(r => setPosts(r.data.map(p => ({ ...p, imageUrl: `${apiBaseUrl}${p.imageUrl}` }))))
       .catch(err => console.error(err))
   }, [])
 
