@@ -9,6 +9,10 @@ app.use(express.json());
 // Serve pictures folder
 app.use('/pictures', express.static(path.join(__dirname, '..', 'pictures')));
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Brewstagram Node backend is running' });
+});
+
 // Simple auth mock
 app.post('/api/auth/login', (req, res) => {
   const { username } = req.body || {};
@@ -26,5 +30,23 @@ app.get('/api/posts', (req, res) => {
   res.json(samplePosts);
 });
 
+// Serve frontend build if present
+const frontendDistPath = path.join(__dirname, '..', 'frontend', 'dist');
+const indexHtmlPath = path.join(frontendDistPath, 'index.html');
+
+if (require('fs').existsSync(indexHtmlPath)) {
+  app.use(express.static(frontendDistPath));
+  app.get('*', (req, res) => {
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'Not found' });
+    }
+    res.sendFile(indexHtmlPath);
+  });
+}
+
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Node backend listening on http://localhost:${PORT}`));
+const HOST = '0.0.0.0';
+
+app.listen(PORT, HOST, () => {
+  console.log(`Node backend listening on http://${HOST}:${PORT}`);
+});
