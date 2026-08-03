@@ -1,12 +1,174 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brewstagram</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brewstagram | Coffee Social Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark topbar">
+        <div class="container-fluid">
+
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="pictures/logoname.png" class="logo-img" alt="Brewstagram logo">
+                <span class="brand-title">Brewstagram</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="post.html">Post</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="explore.html" class="btn btn-outline-cream btn-sm px-3 py-2">Browse</a>
+                    <a href="about.html" class="btn btn-cream btn-sm px-3 py-2">Join</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-panel">
+            <p class="kicker text-white-50">Coffee social network</p>
+            <h1>Share Your Coffee Moments</h1>
+            <p>Discover cafes, brewing methods, latte art, and cozy stories from coffee lovers around the world.</p>
+            <div class="d-flex gap-3 mt-4 flex-wrap">
+                <a href="explore.html" class="btn btn-cream">Explore Feed</a>
+                <a href="post.html" class="btn btn-outline-cream">View Featured Post</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- Popular Coffee Moments -->
+        <section class="section-pad">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-end gap-3 mb-4 flex-wrap">
+                    <div>
+                        <p class="kicker">Trending</p>
+                        <h2 class="section-title mb-0">Popular Coffee Moments</h2>
+                    </div>
+                    <a class="filter-pill" href="explore.html">View all →</a>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <article class="coffee-card">
+                            <img src="pictures/cappuccino1.png" alt="Cappuccino with heart latte art">
+                            <div class="card-body">
+                                <h5>Velvet Cappuccino</h5>
+                                <p class="text-muted-coffee mb-2">@coffeelover · Turin</p>
+                                <strong>♥ 154 likes</strong>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <article class="coffee-card">
+                            <img src="pictures/icecoffee.png" alt="Iced coffee with whipped cream">
+                            <div class="card-body">
+                                <h5>Cookie Iced Coffee</h5>
+                                <p class="text-muted-coffee mb-2">@brew.cafe · Madrid</p>
+                                <strong>♥ 96 likes</strong>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <article class="coffee-card">
+                            <img src="pictures/coffeetime.png" alt="Two lattes on a cafe table">
+                            <div class="card-body">
+                                <h5>Coffee Date</h5>
+                                <p class="text-muted-coffee mb-2">@coffee_diary · Milan</p>
+                                <strong>♥ 128 likes</strong>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Featured Post Feed -->
+        <section class="section-pad" style="background:#f5e6d8;">
+            <div class="container feed-layout">
+
+                <article class="post-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img class="avatar" src="pictures/diary.png" alt="Coffee diary avatar">
+                        <div>
+                            <h6 class="mb-0">Coffee_diary</h6>
+                            <small class="text-muted-coffee">Turin, Italy · 2 hours ago</small>
+                        </div>
+                    </div>
+                    <img class="post-image" src="pictures/coffeetime.png" alt="Cafe table with two coffees">
+                    <div class="post-actions mt-3">
+                        <span>♡</span>
+                        <span>💬</span>
+                        <span>↗</span>
+                        <span class="ms-auto">🔖</span>
+                    </div>
+                    <p class="mb-1"><strong>Liked by brew.love and 128 others</strong></p>
+                    <p>
+                        There's always time for coffee ☕
+                        <span class="text-muted-coffee">#latte #coffeetime #cappuccino</span>
+                    </p>
+                    <a class="btn btn-coffee" href="post.html">Open Post</a>
+                </article>
+
+                <aside class="d-grid gap-3">
+                    <div class="sidebar-card">
+                        <h5>☕ Coffee Tips</h5>
+                        <p class="mb-1">Use fresh beans.</p>
+                        <p class="mb-1">Grind before brewing.</p>
+                        <p class="mb-0">Do not overheat milk.</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h5>Today's Coffee</h5>
+                        <img class="rounded-4 my-2" src="pictures/cappuccino2.png" alt="Featured cappuccino">
+                        <p class="mb-0 fw-bold">Flat white with heart art</p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h4 class="brand-title">Brewstagram ☕</h4>
+            <p class="mb-3">A cozy social network for coffee lovers, cafe hunters, and latte-art dreamers.</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="post.html">Post</a>
+                <a href="about.html">About</a>
+            </div>
+            <small>© 2026 Brewstagram. Designed with HTML, CSS, and Bootstrap.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
